@@ -1,16 +1,20 @@
-#include "./cpu/register.h"
+#include "register.h"
 #include <iostream>
 
 using namespace std;
 
-Registers registers;
+gbRegisters registers;
 
-int main(int argc, char *argv[]){
-
+int main(int argc, char *argv[]) {
     registers.b = 1;
     registers.c = 2;
 
-    uint16_t bc = get_bc(registers.b, registers.c);
+    uint16_t bc = get_bc(registers);
 
-    cout << registers.b << registers.c << bc;
+    cout << int(registers.b) << "\n" << int(registers.c) << "\n" << bc << "\n";
+
+    set_bc(registers, 12343);
+    bc = get_bc(registers);
+
+    cout << bc << "\n";
 }

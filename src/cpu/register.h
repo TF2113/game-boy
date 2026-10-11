@@ -3,7 +3,7 @@
 
 #include <cstdint>
 
-typedef struct Registers {
+struct gbRegisters {
     uint8_t a;
     uint8_t b;
     uint8_t c;
@@ -11,8 +11,9 @@ typedef struct Registers {
     uint8_t e;
     uint8_t h;
     uint8_t l;
-} Registers;
+};
 
-uint16_t get_bc(uint8_t b, uint8_t c);
+uint16_t get_bc(gbRegisters registers);
+void set_bc(gbRegisters &registers, uint16_t value);
 
 #endif
