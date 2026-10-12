@@ -14,6 +14,9 @@ struct gbRegisters {
     uint8_t l;
 };
 
+uint16_t stack_pointer;
+uint16_t pc;
+
 uint16_t get_af(gbRegisters &registers);
 void set_af(gbRegisters &registers, uint16_t value);
 
