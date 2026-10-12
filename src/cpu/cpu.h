@@ -8,7 +8,7 @@ class CPU {
     // 8 bit registers
     uint8_t a, b, c, d, e, f, h, l;
     uint16_t stack_pointer;
-    uint16_t pc;
+    uint16_t program_counter;
 
     uint16_t get_af();
     void set_af(uint16_t value);
