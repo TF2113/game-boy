@@ -3,6 +3,17 @@
 // Alongside the 8 bit registers, registers can be accessed as pairs to create
 // 16 bit registers
 
+uint16_t get_af(gbRegisters &registers) {
+    uint16_t af = static_cast<uint16_t>(registers.a << 8) |
+                  static_cast<uint16_t>(registers.f);
+    return af;
+}
+
+void set_af(gbRegisters &registers, uint16_t value) {
+    registers.a = (value & 0xFF00) >> 8;
+    registers.f = value & 0x00FF;
+}
+
 uint16_t get_bc(gbRegisters &registers) {
     uint16_t bc = static_cast<uint16_t>(registers.b << 8) |
                   static_cast<uint16_t>(registers.c);

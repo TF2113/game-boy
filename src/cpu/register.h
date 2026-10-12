@@ -9,9 +9,13 @@ struct gbRegisters {
     uint8_t c;
     uint8_t d;
     uint8_t e;
+    uint8_t f;
     uint8_t h;
     uint8_t l;
 };
+
+uint16_t get_af(gbRegisters &registers);
+void set_af(gbRegisters &registers, uint16_t value);
 
 uint16_t get_bc(gbRegisters &registers);
 void set_bc(gbRegisters &registers, uint16_t value);
