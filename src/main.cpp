@@ -1,20 +1,20 @@
-#include "register.h"
+#include "cpu.h"
 #include <iostream>
 
 using namespace std;
 
-gbRegisters registers;
-
 int main(int argc, char *argv[]) {
-    registers.b = 1;
-    registers.c = 2;
+    CPU gbCPU;
 
-    uint16_t bc = get_bc(registers);
+    gbCPU.b = 1;
+    gbCPU.c = 2;
 
-    cout << int(registers.b) << "\n" << int(registers.c) << "\n" << bc << "\n";
+    uint16_t bc = gbCPU.get_bc();
 
-    set_bc(registers, 12343);
-    bc = get_bc(registers);
+    cout << int(gbCPU.b) << "\n" << int(gbCPU.c) << "\n" << bc << "\n";
+
+    gbCPU.set_bc(12343);
+    bc = gbCPU.get_bc();
 
     cout << bc << "\n";
 }
