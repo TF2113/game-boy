@@ -1,11 +1,15 @@
 #include "cpu.h"
+#include "mmu.h"
 #include <iostream>
 
 using namespace std;
 
-int main(int argc, char *argv[]) {
-    CPU gbCPU;
+CPU gbCPU;
+MMU gbMMU;
 
+int main(int argc, char *argv[]) {
+    gbMMU.initialise();
+    
     gbCPU.b = 1;
     gbCPU.c = 2;
 
