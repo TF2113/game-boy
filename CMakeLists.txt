@@ -7,5 +7,5 @@ add_executable(game-boy)
 target_sources(game-boy
     PRIVATE
         src/main.cpp
-        src/cpu/register.cpp
+        src/cpu/cpu.cpp
 )
