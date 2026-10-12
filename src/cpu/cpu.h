@@ -7,6 +7,7 @@ class CPU {
   public:
     // 8 bit registers
     uint8_t a, b, c, d, e, f, h, l;
+
     uint16_t stack_pointer;
     uint16_t pc;
 
