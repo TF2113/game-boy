@@ -1,24 +1,20 @@
 #include "cpu.h"
 #include "mmu.h"
+#include "rom.h"
 #include <iostream>
 
 using namespace std;
 
 CPU gbCPU;
 MMU gbMMU;
+ROM gbROM;
 
 int main(int argc, char *argv[]) {
     gbMMU.initialise();
-    
-    gbCPU.b = 1;
-    gbCPU.c = 2;
 
-    uint16_t bc = gbCPU.get_bc();
+    if(!gbROM.load_rom(argv[1])) {
+        return 1;
+    }
 
-    cout << int(gbCPU.b) << "\n" << int(gbCPU.c) << "\n" << bc << "\n";
-
-    gbCPU.set_bc(12343);
-    bc = gbCPU.get_bc();
-
-    cout << bc << "\n";
+    gbMMU.load_game(ROM::rom_data, ROM::rom_size);
 }

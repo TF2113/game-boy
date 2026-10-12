@@ -9,6 +9,7 @@ using namespace std;
 class MMU {
   public:
     void initialise();
+    bool load_game(const uint8_t *rom_data, size_t size);
     
   private:
     // Memory Map
