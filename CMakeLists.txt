@@ -9,6 +9,7 @@ target_sources(game-boy
         src/main.cpp
         src/cpu/cpu.cpp
         src/cpu/mmu.cpp
+        src/cpu/rom.cpp
 )
 
 target_include_directories(game-boy PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src/cpu")

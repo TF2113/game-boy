@@ -1,5 +1,8 @@
 #include "mmu.h"
+#include <cstring>
 #include <iostream>
+
+using namespace std;
 
 void MMU::initialise() {
     for(size_t i = 0; i < cartridge.size(); i++) {
@@ -31,4 +34,15 @@ void MMU::initialise() {
     }
 
     cout << "MMU Initialised\n";
-}
+};
+
+bool MMU::load_game(const uint8_t *rom_data, size_t size) {
+    if(size > cartridge.size()) {
+        cout << "[MMU] ROM is too large to store\n";
+        return false;
+    }
+
+    memcpy(&cartridge.front(), (void *)rom_data, size);
+    cout << "Successfully loaded ROM!\n";
+    return true;
+};
