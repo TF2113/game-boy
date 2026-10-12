@@ -13,7 +13,13 @@ struct gbRegisters {
     uint8_t l;
 };
 
-uint16_t get_bc(gbRegisters registers);
+uint16_t get_bc(gbRegisters &registers);
 void set_bc(gbRegisters &registers, uint16_t value);
+
+uint16_t get_de(gbRegisters &registers);
+void set_de(gbRegisters &registers, uint16_t value);
+
+uint16_t get_hl(gbRegisters &registers);
+void set_hl(gbRegisters &registers, uint16_t value);
 
 #endif
